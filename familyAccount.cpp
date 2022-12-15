@@ -125,7 +125,7 @@ class parent {
  			}
 			// When the bank account number is valid
 				if(isNumber(bankAccount) && bankAccount.size()==12){
-        		cout << "\nEnter amount to be tranfered\n";
+        		cout << "\nEnter amount to be transfered\n";
         		
         		/*when transfert amount is greater than the balance, 
         		ask the user to enter a lesser amount or to cancel the transaction and return to the ATM Menu
@@ -138,11 +138,11 @@ class parent {
     						// Balance is greater than amount to withdraw
     						if (amount<balance){
     							balance-=amount;
- 								cout << "\n$" << amount <<" transfert successful" << endl;
+ 								cout << "\n$" << amount <<" transfer successful" << endl;
         						cout << "Current account balance: $" << balance  << endl;
     							break;
     						}
-							//tr ansfer is greater than the balance
+							//transfer is greater than the balance
     						else{
     							throw 'E';
     						}
@@ -160,11 +160,11 @@ class parent {
 						}
     					
     				}
-    				// If the input is not a number diplay message Invalid input. Please enter 4 digit.
+    				// If the input is not a number diplay message Invalid input. Please enter 4 digit pin.
       				else {
       					cin.clear();
       					cin.ignore(numeric_limits<streamsize>::max(), '\n');
-      					cout << "Invalid input. Please enter 4 digit."<< endl;
+      					cout << "Invalid input. Please enter 4 digit pin."<< endl;
       				}		
 				
 				}
@@ -194,7 +194,7 @@ class child : public parent {
 			age=a;  
 			
 			// for older child set withdrawal limit to 500
-    		if(a==20)
+    		if(a>=20)
     			withdrawLimit=500;
     		// for younger child set withdrawal limit to 300
     		else
@@ -243,7 +243,7 @@ class child : public parent {
 							
 							cout << "\nInsufficient fund!" << endl;
  							cout << "Your current balance is: $" << balance  << endl;
- 							cout << "To continue your transaction enter yes and choose a lesser amount or enter no to cancel your transaction."<< endl;
+ 							cout << "To continue your transaction enter 'yes' and choose a lesser amount or enter 'no' to cancel your transaction."<< endl;
  							cin>> cancel;
  							if(cancel=="yes" ||cancel=="YES")
  								cout << "\nPlease try a lesser amount\n";
@@ -253,7 +253,7 @@ class child : public parent {
     					catch(int){
 							
 							cout << "\nYou can withdraw up to "<<withdrawLimit<<"\n";
- 							cout << "To continue your transaction enter yes and choose a lesser amount or enter no to cancel your transaction."<< endl;
+ 							cout << "To continue your transaction enter 'yes' and choose a lesser amount or enter 'no' to cancel your transaction."<< endl;
  							cin>> cancel;
  							if(cancel=="yes" ||cancel=="YES")
  								cout << "\nPlease try a lesser amount\n";
@@ -261,11 +261,11 @@ class child : public parent {
  								break;
 						}
     				}
-    			// If the input is not anumber diplay message Invalid input. Please enter 4 digit.
+    			// If the input is not anumber diplay message Invalid input. Please enter 4 digit pin.
       			else {
       				cin.clear();
       				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-      				cout << "Invalid input. Please enter 4 digit."<< endl;
+      				cout << "Invalid input. Please enter 4 digit pin."<< endl;
       			}		
 			
 			}
@@ -319,13 +319,13 @@ int main()
 						
     					}
     				}
-    				// If the input is not anumber diplay message Invalid input. Please enter 4 digit.
+    				// If the input is not anumber diplay message Invalid input. Please enter 4 digit pin.
       				else 
       					if(attempt>0)	
       					{
       						cin.clear();
       						cin.ignore(numeric_limits<streamsize>::max(), '\n');
-      						cout << "Invalid input. Please enter 4 digit. You have "<< attempt<<" remaining tries!"<< endl;
+      						cout << "Invalid input. Please enter 4 digit pin. You have "<< attempt<<" remaining tries!"<< endl;
       					}	
       					else
 							{
